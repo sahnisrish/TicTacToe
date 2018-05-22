@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.ContentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/Player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/Player2"
+            android:layout_alignBottom="@id/Player1name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="215dp"
+            android:text="Player 1:"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/Player1name"
+            android:layout_width="0dp"
+            android:backgroundTint="@color/colorButton"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/Player2name"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@id/Player1"
+            android:hint="Enter name for Player One"
+            android:text=""
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/textHint"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/Player1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Player1"
+            app:layout_constraintTop_toTopOf="@+id/Player1" />
+
+        <TextView
+            android:id="@+id/Player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/size"
+            android:layout_alignBottom="@id/Player2name"
+            android:layout_marginTop="8dp"
+            android:text="Player 2:"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/Player1"
+            app:layout_constraintTop_toBottomOf="@+id/Player1" />
+
+        <EditText
+            android:id="@+id/Player2name"
+            android:layout_width="0dp"
+            android:backgroundTint="@color/colorButton"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/size"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/textHint"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/Player2"
+            android:hint="Enter name for Player Two"
+            android:text=""
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/Player2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Player2"
+            app:layout_constraintTop_toTopOf="@+id/Player2"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/TextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/size"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@id/size"
+            android:text="Size:"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/size"
+            app:layout_constraintTop_toBottomOf="@+id/Player2" />
+
+        <RadioGroup
+            android:id="@+id/size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/Player2name"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@+id/Player2name"
+            app:layout_constraintTop_toTopOf="@+id/TextSize">
+
+            <RadioButton
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Choose"
+                android:buttonTint="@color/colorButton"
+                android:text="3X3"
+                android:textColor="@color/colorText"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Choose"
+                android:buttonTint="@color/colorButton"
+                android:text="4X4"
+                android:textColor="@color/colorText"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Choose"
+                android:buttonTint="@color/colorButton"
+                android:text="5X5"
+                android:textColor="@color/colorText"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/size"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/play"
+            android:onClick="Switch"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="play"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/size" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.ContentFrameLayout>
